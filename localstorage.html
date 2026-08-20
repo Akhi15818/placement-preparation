@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+</head>
+
+<body>
+
+    <h1 id="h1Tag">
+        local storage data
+    </h1>
+
+    <button onclick="handleButton()">
+        button
+    </button>
+
+
+    <script>
+
+        console.log('js is started');
+
+        let localcolor = localStorage.getItem('color');
+
+
+        let h1Tag = document.getElementById('h1Tag');
+
+
+        function onPageLoad() {
+
+            h1Tag.style.color = localcolor;
+
+        }
+
+
+
+        function handleButton() {
+
+            // it will stay in the browser for the lifetime
+
+            localStorage.setItem('color', 'red'); // color : red
+            h1Tag.style.color = 'red'
+
+
+        }
+
+
+        onPageLoad()
+
+
+
+        console.log('js is ended')
+
+
+    </script>
+
+</body>
+
+</html>

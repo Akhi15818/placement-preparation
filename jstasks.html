@@ -1,0 +1,193 @@
+<!---task 11-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 11 - Implicit Coercion</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  <h2>Task 11: Implicit Coercion</h2>
+  <script>
+    console.log('A' - 1);         // NaN
+    console.log('A' + 1);         // "A1"
+    console.log(2 + '2' + '2');   // "222"
+    console.log('hello' + 'world' + 89); // "helloworld89"
+    console.log('hello' - 'world' + 89); // NaN
+    console.log('hello' + 78);    // "hello78"
+    console.log('78' - 90 + '2'); // "-122"
+    console.log(2 - '2' + 90);    // 90
+    console.log(89 - '90' / 2);   // 44
+    console.log((true == false) > 2); // false
+  </script>
+</body>
+</html>
+<!---task 12-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 12 - String & Number Operations</title>
+</head>
+<body>
+  <h2>Task 12: String & Number Examples</h2>
+  <script>
+    let str1 = "gfuh ieiuei";
+    console.log("First 5 letters:", str1.substring(0, 5)); 
+
+    let str2 = "hduej dij";
+    console.log("Length:", str2.length, "Uppercase:", str2.toUpperCase());
+
+    let str3 = " biji jdo ";
+    console.log("Lowercase & Trim:", str3.toLowerCase().trim());
+
+    let str4 = "I love JavaScript";
+    console.log("Replace:", str4.replace("JavaScript", "Python"));
+
+    console.log("Random coercion:", 89 + 'hello' + 90 / 9);
+  </script>
+</body>
+</html>
+<!---task 13-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 13 - Objects & Arrays</title>
+</head>
+<body>
+  <h2>Task 13: Objects & Arrays</h2>
+  <pre id="output"></pre>
+
+  <script>
+    let out = "";
+
+    // 1. Create object for animal, car
+    let animal = { name: "Dog", sound: "Bark" };
+    let car = { brand: "Tesla", model: "Model 3" };
+    out += "Animal: " + JSON.stringify(animal) + "\n";
+    out += "Car: " + JSON.stringify(car) + "\n\n";
+
+    // 2. Find duplicate in a string
+    let str = "programming";
+    let arr = str.split('');
+    let duplicates = arr.filter((ch, i) => arr.indexOf(ch) !== i);
+    out += "Duplicates in 'programming': " + [...new Set(duplicates)].join(", ") + "\n\n";
+
+    // 3. Reverse a string
+    let word = "JavaScript";
+    let reversed = word.split('').reverse().join('');
+    out += "Reversed 'JavaScript': " + reversed + "\n\n";
+
+    // 4. Find highest & lowest in array
+    let nums = [34, 67, 12, 89, 5, 44];
+    let max = Math.max(...nums);
+    let min = Math.min(...nums);
+    out += "Array: " + nums.join(", ") + "\n";
+    out += "Max: " + max + ", Min: " + min + "\n\n";
+
+    // 5. Sort array
+    let sorted = [...nums].sort((a, b) => a - b);
+    out += "Sorted Array: " + sorted.join(", ") + "\n\n";
+
+    // 6. Display first 3 elements
+    out += "First 3 elements: " + nums.slice(0, 3).join(", ") + "\n\n";
+
+    // 7. Remove 4th element & add 2 new elements
+    let updatedArr = [...nums];
+    updatedArr.splice(3, 1, 100, 200); // remove index 3 & add 2 elements
+    out += "Array after removing 4th element & adding 100,200: " + updatedArr.join(", ") + "\n";
+
+    // Show in browser
+    document.getElementById("output").innerText = out;
+  </script>
+</body>
+</html>
+<!---task 14-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 14 - Functions</title>
+</head>
+<body>
+  <h2>Task 14 - Functions, Scope, Events</h2>
+
+  <div id="myDiv" style="width:200px;height:100px;border:1px solid black;">
+    Div Element
+  </div>
+
+  <script>
+    // 1. Multiply 3 numbers
+    function multiply(a, b, c) {
+      return a * b * c;
+    }
+    console.log("Multiply 2, 3, 4 =", multiply(2, 3, 4));
+
+    // 2. Divide 2 numbers
+    function divide(x, y) {
+      return y !== 0 ? x / y : "Cannot divide by zero";
+    }
+    console.log("Divide 10 / 2 =", divide(10, 2));
+
+    // 3. Add background color to a div
+    function addBackgroundColor() {
+      document.getElementById("myDiv").style.backgroundColor = "lightblue";
+    }
+    addBackgroundColor();
+
+    // 4. Random background color for body
+    function randomBgColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+    }
+    randomBgColor();
+
+    // 5. Modal popup (simple alert instead of Bootstrap modal)
+    window.onload = function() {
+      alert("Welcome! This is a simple modal replacement.");
+    };
+  </script>
+</body>
+</html>
+<!---task 15-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 15 - Conditional Statements</title>
+</head>
+<body>
+  <h2>Task 15 - Conditional Statements</h2>
+
+  <script>
+    // 1. Check if number is multiple of 3
+    function checkMultipleOf3(num) {
+      if (num % 3 === 0) {
+        console.log(num + " is a multiple of 3");
+      } else {
+        console.log(num + " is NOT a multiple of 3");
+      }
+    }
+    checkMultipleOf3(10900);
+
+    // 2. Check if substring exists in string
+    function checkSubstring(str, sub) {
+      if (str.includes(sub)) {
+        console.log(`"${sub}" exists in "${str}"`);
+      } else {
+        console.log(`"${sub}" does NOT exist in "${str}"`);
+      }
+    }
+    checkSubstring("I am learning JS", "JS");
+
+    // 3. Calculate complex interest: (p*r*t)/100
+    function complexInterest(p, r, t) {
+      let ci = (p * r * t) / 100;
+      console.log(`Complex Interest = ${ci}`);
+    }
+    // Example: Principal = 1000, Rate = 5%, Time = 2 years
+    complexInterest(1000, 5, 2);
+  </script>
+</body>
+</html>

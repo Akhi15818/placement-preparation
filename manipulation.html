@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+</head>
+
+<body>
+
+
+
+    <h1 id="h1Id">dom manipulation class</h1>
+
+    <div id="divElement">
+
+        <p>
+            this is ptag
+        </p>
+
+    </div>
+
+    <div id="secondDiv">
+
+
+    </div>
+
+
+    <script>
+
+        console.log('js is started');
+
+        let h1Tag = document.getElementById("h1Id");
+
+        // console.log(h1Tag, 'h1')
+
+
+        // css in js
+        h1Tag.style.backgroundColor = 'red'
+        h1Tag.style.color = 'blue'
+
+        // console.log(h1Tag.id, 'h1')
+
+
+        let divElement = document.getElementById('divElement')
+
+        console.log(divElement, 'div')
+
+        // inner html will give the inner elements that means tags
+        console.log(divElement.innerHTML, 'div inner html')
+
+
+        // inner text will give the text only
+        console.log(divElement.innerText, 'div inner text')
+
+
+
+        let secondDiv = document.getElementById('secondDiv')
+
+        console.log(secondDiv.innerHTML,"secondDiv")
+
+        secondDiv.innerHTML = '<b>this is b tag created using the js </b>'
+        // change the text
+        console.log('js ended');
+    </script>
+</body>
+
+</html>

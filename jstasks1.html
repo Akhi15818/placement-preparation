@@ -1,0 +1,109 @@
+<!---task 16-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 16</title>
+</head>
+<body>
+    <h2>Open Console to See Output (Press F12)</h2>
+    <script src="script1.js"></script>
+</body>
+</html>
+<!---task 17-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3 Cards in a Row</title>
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            width: 150px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container" id="cards"></div>
+
+    <script>
+        let cards = ["Card 1", "Card 2", "Card 3"];
+        let container = document.getElementById("cards");
+
+        cards.forEach(text => {
+            let div = document.createElement("div");
+            div.className = "card";
+            div.innerText = text;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
+<!---task 18-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <form id="myForm">
+        Email: <input type="email" id="email" required><br>
+        Contact: <input type="text" id="contact" pattern="[0-9]{10}" required><br>
+        Name: <input type="text" id="name" required><br>
+        Age: <input type="number" id="age" min="1" max="120" required><br>
+        Designation: <input type="text" id="designation"><br>
+        DOB: <input type="date" id="dob" required><br>
+        Select files: <input type="file" id="files" multiple><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            alert("Form submitted successfully!");
+        });
+    </script>
+</body>
+</html>
+<!---task 19-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+<body>
+    <div id="movies"></div>
+
+    <script>
+        fetch("https://dummyjson.com/products") // dummy API
+            .then(response => response.json())
+            .then(data => {
+                let container = document.getElementById("movies");
+                data.products.slice(0, 3).forEach(movie => {
+                    let div = document.createElement("div");
+                    div.innerHTML = `<h3>${movie.title}</h3><p>${movie.description}</p>`;
+                    container.appendChild(div);
+                });
+            });
+    </script>
+</body>
+</html>
+<!---task 20-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 20 - Advanced JS</title>
+</head>
+<body>
+  <h2>Task 20: Advanced JavaScript (ES6)</h2>
+  <p>Open Console (F12) to see output</p>
+
+  <script src="script2.js"></script>
+</body>
+</html>
